@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
 
-    var CurrentWeather = currentWeather()
+    var CurrentWeather :currentWeather!
     
     @IBOutlet weak var datelbl: UILabel!
     
@@ -24,9 +24,12 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
         InfoView.dataSource = self
         InfoView.delegate = self
+        CurrentWeather = currentWeather()
         CurrentWeather.downloadWeatherDetails {
-            
+           self.updateMainUI()
         }
+       
+
     }
     
 
@@ -46,7 +49,20 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         return cell
     }
     
+    func updateMainUI()
+    {
+        datelbl.text = CurrentWeather.date
+        
+        currentTempLbl.text = "\(CurrentWeather.currentTemp)"
+        print("\(CurrentWeather.currentTemp)")
+        currentWeatherType.text = CurrentWeather.weatherType
+        print(CurrentWeather.weatherType)
+        cityLbl.text = CurrentWeather.cityName
+        print(CurrentWeather.cityName)
+        currentWeatherImg.image = UIImage(named:CurrentWeather.weatherType)
+        
     
+    }
 
 }
 
