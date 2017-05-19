@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
 
+    var CurrentWeather = currentWeather()
+    
     @IBOutlet weak var datelbl: UILabel!
     
     @IBOutlet weak var InfoView: UITableView!
@@ -22,6 +24,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
         InfoView.dataSource = self
         InfoView.delegate = self
+        CurrentWeather.downloadWeatherDetails {
+            
+        }
     }
     
 
