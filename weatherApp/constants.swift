@@ -12,7 +12,7 @@ let LATITUDE = "lat="
 let LONGITUDE = "&lon="
 let APPID = "&appid="
 let APIKEY = "243f6117cfb66470c1b92b091d8bff82"
-let CURRENT_WEATHER_URL = "\(BASE_URL)\(LATITUDE)20\(LONGITUDE)100\(APPID)\(APIKEY)"
+let CURRENT_WEATHER_URL = "\(BASE_URL)\(LATITUDE)12.9754\(LONGITUDE)80.1901\(APPID)\(APIKEY)"
 typealias DownloadComplete = () -> ()
 
- let FORECAST_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?lat=20&lon=100&cnt=10&appid=243f6117cfb66470c1b92b091d8bff82"
+ let FORECAST_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?lat=12.9754&lon=80.1901&cnt=10&appid=243f6117cfb66470c1b92b091d8bff82"
